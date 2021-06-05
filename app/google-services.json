@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "800043831025",
+    "firebase_url": "https://crudmovil-9481b-default-rtdb.firebaseio.com",
+    "project_id": "crudmovil-9481b",
+    "storage_bucket": "crudmovil-9481b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800043831025:android:6562f2a282e20944dc2350",
+        "android_client_info": {
+          "package_name": "com.example.crudmovil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800043831025-nu346u12acf84ti8jidnntl0b67k3k65.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crudmovil",
+            "certificate_hash": "c26060e56eb7c381fa7375686aec75b1d336b5d2"
+          }
+        },
+        {
+          "client_id": "800043831025-rpf4muoa1ed2bss6smor56vhbbartna0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEtoJ9EALgXtL5HI74FCQDF9lPv9vvtkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800043831025-rpf4muoa1ed2bss6smor56vhbbartna0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
