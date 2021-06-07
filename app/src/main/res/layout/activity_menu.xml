@@ -8,11 +8,11 @@
     tools:context=".MenuActivity">
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/btnFactura"
         android:layout_width="129dp"
         android:layout_height="62dp"
         android:background="#163D5D"
-        android:text="Button"
+        android:text="Factura"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,11 +22,11 @@
         app:layout_constraintVertical_bias="0.596" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnProducto"
         android:layout_width="129dp"
         android:layout_height="62dp"
         android:background="#163D5D"
-        android:text="Button"
+        android:text="Producto"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,11 +36,11 @@
         app:layout_constraintVertical_bias="0.394" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnFabricante"
         android:layout_width="129dp"
         android:layout_height="62dp"
         android:background="#163D5D"
-        android:text="Button"
+        android:text="Fabricante"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,11 +50,11 @@
         app:layout_constraintVertical_bias="0.394" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnPedido"
         android:layout_width="129dp"
         android:layout_height="62dp"
         android:background="#163D5D"
-        android:text="Button"
+        android:text="Pedido"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

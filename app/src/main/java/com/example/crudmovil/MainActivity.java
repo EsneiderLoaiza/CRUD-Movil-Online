@@ -3,6 +3,7 @@ package com.example.crudmovil;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -167,5 +168,11 @@ public class MainActivity extends AppCompatActivity {
         etNombre.setText("");
         etDireccion.setText("");
         etTelefono.setText("");
+    }
+
+    public void atras(View view) {
+
+        startActivity(new Intent(MainActivity.this, MenuActivity.class));
+        finish();
     }
 }
