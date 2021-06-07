@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     EditText etTelefono;
     ListView listvClientes;
 
+    /*lista*/
     private List<Cliente> listCliente = new ArrayList<Cliente>();
     ArrayAdapter<Cliente> arrayAdapterCliente;
 
