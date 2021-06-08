@@ -23,17 +23,17 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PedidoActivity extends AppCompatActivity {
+public class PedidActivity extends AppCompatActivity {
 
     private EditText etId_pedido;
     private EditText etId_cliente;
-    private EditText etNombrep;
+    private EditText etNombreP;
     private EditText etFecha;
     private EditText etDescripcion;
 
     private ListView listvPedido;
 
-    /*lista*/
+    /*Lista*/
     private List<Pedido> listPedido = new ArrayList<Pedido>();
     ArrayAdapter<Pedido> arrayAdapterPedido;
 
@@ -45,11 +45,11 @@ public class PedidoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pedid);
 
         etId_pedido = findViewById(R.id.etId_pedido);
         etId_cliente = findViewById(R.id.etId_cliente);
-        etNombrep = findViewById(R.id.etNombrep);
+        etNombreP = findViewById(R.id.etNombreP);
         etFecha = findViewById(R.id.etFecha);
         etDescripcion = findViewById(R.id.etDescripcion);
 
@@ -64,7 +64,7 @@ public class PedidoActivity extends AppCompatActivity {
                 pedidoSeleccionado = (Pedido) parent.getItemAtPosition(position);
                 etId_pedido.setText(pedidoSeleccionado.getId_pedido());
                 etId_cliente.setText(pedidoSeleccionado.getId_cliente());
-                etNombrep.setText(pedidoSeleccionado.getNombre());
+                etNombreP.setText(pedidoSeleccionado.getNombre());
                 etFecha.setText(pedidoSeleccionado.getFecha());
                 etDescripcion.setText(pedidoSeleccionado.getDescripcion());
             }
@@ -80,7 +80,7 @@ public class PedidoActivity extends AppCompatActivity {
                     Pedido pedido = objSnaptshot.getValue(Pedido.class);
                     listPedido.add( pedido);
 
-                    arrayAdapterPedido = new ArrayAdapter<Pedido>(PedidoActivity.this, android.R.layout.simple_list_item_1, listPedido);
+                    arrayAdapterPedido = new ArrayAdapter<Pedido>(PedidActivity.this, android.R.layout.simple_list_item_1, listPedido);
                     listvPedido.setAdapter(arrayAdapterPedido);
                 }
             }
@@ -105,11 +105,11 @@ public class PedidoActivity extends AppCompatActivity {
     private String fecha;
     private String descripcion;
 
-    public void crear (View view) {
+    public void crearP (View view) {
 
         idPedido = etId_pedido.getText().toString();
         idCliente = etId_cliente.getText().toString();
-        nombre = etNombrep.getText().toString();
+        nombre = etNombreP.getText().toString();
         fecha = etFecha.getText().toString();
         descripcion = etDescripcion.getText().toString();
 
@@ -132,12 +132,11 @@ public class PedidoActivity extends AppCompatActivity {
         }
     }
 
-
-    public void actualizar (View view) {
+    public void actualizarP (View view) {
         Pedido pedido = new Pedido();
         pedido.setId_pedido(etId_pedido.getText().toString().trim());
         pedido.setId_cliente(etId_cliente.getText().toString().trim());
-        pedido.setNombre(etNombrep.getText().toString().trim());
+        pedido.setNombre(etNombreP.getText().toString().trim());
         pedido.setFecha(etFecha.getText().toString().trim());
         pedido.setDescripcion(etDescripcion.getText().toString().trim());
 
@@ -148,7 +147,7 @@ public class PedidoActivity extends AppCompatActivity {
         limpiarCampo();
     }
 
-    public void eliminar (View view) {
+    public void eliminarP (View view) {
         Pedido pedido = new Pedido();
         pedido.setId_pedido(pedido.getId_pedido());
 
@@ -167,7 +166,7 @@ public class PedidoActivity extends AppCompatActivity {
             etId_cliente.setError("Campo requerido");
         }
         if (nombre.equals("")){
-            etNombrep.setError("Campo requerido");
+            etNombreP.setError("Campo requerido");
         }
         if (fecha.equals("")){
             etFecha.setError("Campo requerido");
@@ -177,18 +176,18 @@ public class PedidoActivity extends AppCompatActivity {
         }
     }
 
-    public void limpiarCampo() {
+    private void limpiarCampo() {
 
         etId_pedido.setText("");
         etId_cliente.setText("");
-        etNombrep.setText("");
+        etNombreP.setText("");
         etFecha.setText("");
         etFecha.setText("");
     }
 
-    public void atras(View view) {
+    public void atrasP(View view) {
 
-        startActivity(new Intent(PedidoActivity.this, MenuActivity.class));
+        startActivity(new Intent(PedidActivity.this, MenuActivity.class));
         finish();
     }
 }
