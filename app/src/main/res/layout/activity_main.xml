@@ -35,10 +35,10 @@
         app:layout_constraintEnd_toStartOf="@+id/btnActualizar"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/etNombrep" />
 
     <EditText
-        android:id="@+id/etNombre"
+        android:id="@+id/etNombrep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -59,7 +59,7 @@
         android:background="@drawable/ic_delete"
         android:onClick="eliminar"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/listvClientes"
+        app:layout_constraintBottom_toTopOf="@+id/listvPedido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/etTelefono"
@@ -99,7 +99,7 @@
         android:text="Lista de clientes"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/listvClientes"
+        app:layout_constraintBottom_toTopOf="@+id/listvPedido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +119,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listvClientes"
+        android:id="@+id/listvPedido"
         android:layout_width="310dp"
         android:layout_height="221dp"
         android:background="#163D5D"
@@ -138,7 +138,7 @@
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/etNombre"
+        app:layout_constraintBottom_toTopOf="@+id/etNombrep"
         app:layout_constraintEnd_toStartOf="@+id/btnCrear"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -148,13 +148,14 @@
         android:id="@+id/btnAtras"
         android:layout_width="63dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/ic_backspace"
         android:onClick="atras"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintBottom_toTopOf="@+id/etId"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.177"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

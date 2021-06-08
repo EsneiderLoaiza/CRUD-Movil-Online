@@ -54,6 +54,7 @@
         android:layout_width="129dp"
         android:layout_height="62dp"
         android:background="#163D5D"
+        android:onClick="pedido"
         android:text="Pedido"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

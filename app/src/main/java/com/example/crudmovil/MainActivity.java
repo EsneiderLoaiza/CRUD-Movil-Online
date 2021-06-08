@@ -25,11 +25,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText etId;
-    EditText etNombre;
-    EditText etDireccion;
-    EditText etTelefono;
-    ListView listvClientes;
+    private EditText etId;
+    private EditText etNombre;
+    private EditText etDireccion;
+    private EditText etTelefono;
+    private ListView listvClientes;
 
     /*lista*/
     private List<Cliente> listCliente = new ArrayList<Cliente>();
@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         etId = findViewById(R.id.etId);
-        etNombre = findViewById(R.id.etNombre);
+        etNombre = findViewById(R.id.etNombrep);
         etDireccion = findViewById(R.id.etDireccion);
         etTelefono = findViewById(R.id.etTelefono);
 
-        listvClientes = findViewById(R.id.listvClientes);
+        listvClientes = findViewById(R.id.listvPedido);
 
         inicializarFirebase();
         listarDatos();
@@ -95,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference(); //Pasamos referencia
     }
 
-    String idCliente;
-    String nombre;
-    String direccion;
-    String telefono;
+    private String idCliente;   /*HACERLAS PRIVADAS PARA PROBAR*/
+    private String nombre;
+    private String direccion;
+    private String telefono;
 
     public void crear (View view) {
 

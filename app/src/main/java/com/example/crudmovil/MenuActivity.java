@@ -24,9 +24,14 @@ public class MenuActivity extends AppCompatActivity {
         btnCerrar = (Button) findViewById(R.id.btnCerrar);
     }
 
-    public void cliente(View view) {
+    /*public void cliente(View view) {
         Intent i = new Intent(MenuActivity.this, MainActivity.class);
         startActivity(i);
+    }*/
+
+    public void pedido(View view) {
+        Intent j = new Intent(MenuActivity.this, PedidoActivity.class);
+        startActivity(j);
     }
 
     public void cerrarSesion(View view) {
