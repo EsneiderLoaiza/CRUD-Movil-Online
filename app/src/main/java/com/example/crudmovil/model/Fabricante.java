@@ -3,9 +3,9 @@ package com.example.crudmovil.model;
 public class Fabricante {
 
     private String id_fabricante;
-    private String id_producto;
-    private String nombre;
-    private String direccion;
+    private String id_productoFr;
+    private String nombreFr;
+    private String direccionFr;
     private String telefono;
 
     public Fabricante() {
@@ -20,28 +20,28 @@ public class Fabricante {
         this.id_fabricante = id_fabricante;
     }
 
-    public String getId_producto() {
-        return id_producto;
+    public String getId_productoFr() {
+        return id_productoFr;
     }
 
-    public void setId_producto(String id_producto) {
-        this.id_producto = id_producto;
+    public void setId_productoFr(String id_productoFr) {
+        this.id_productoFr = id_productoFr;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreFr() {
+        return nombreFr;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreFr(String nombreFr) {
+        this.nombreFr = nombreFr;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getDireccionFr() {
+        return direccionFr;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setDireccionFr(String direccionFr) {
+        this.direccionFr = direccionFr;
     }
 
     public String getTelefono() {
@@ -51,8 +51,9 @@ public class Fabricante {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
     @Override
     public String toString() {
-        return nombre;
+        return nombreFr;
     }
 }
