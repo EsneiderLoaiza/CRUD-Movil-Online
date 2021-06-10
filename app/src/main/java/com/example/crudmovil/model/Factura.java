@@ -3,9 +3,9 @@ package com.example.crudmovil.model;
 public class Factura {
 
     private String id_factura;
-    private String id_producto;
-    private String fecha;
-    private String valor;
+    private String id_productoFac;
+    private String fechaFac;
+    private String valorFac;
 
     public Factura() {
 
@@ -19,32 +19,32 @@ public class Factura {
         this.id_factura = id_factura;
     }
 
-    public String getId_producto() {
-        return id_producto;
+    public String getId_productoFac() {
+        return id_productoFac;
     }
 
-    public void setId_producto(String id_producto) {
-        this.id_producto = id_producto;
+    public void setId_productoFac(String id_productoFac) {
+        this.id_productoFac = id_productoFac;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getFechaFac() {
+        return fechaFac;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setFechaFac(String fechaFac) {
+        this.fechaFac = fechaFac;
     }
 
-    public String getValor() {
-        return valor;
+    public String getValorFac() {
+        return valorFac;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setValorFac(String valorFac) {
+        this.valorFac = valorFac;
     }
 
     @Override
     public String toString() {
-        return fecha;
+        return fechaFac;
     }
 }
