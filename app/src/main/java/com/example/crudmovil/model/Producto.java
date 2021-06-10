@@ -3,10 +3,10 @@ package com.example.crudmovil.model;
 public class Producto {
 
     private String id_producto;
-    private String id_pedido;
-    private String id_fabricante;
-    private String nombre;
-    private String valor;
+    private String id_pedidoPro;
+    private String id_fabricantePro;
+    private String nombrePro;
+    private String valorPro;
 
     public Producto() {
 
@@ -20,40 +20,40 @@ public class Producto {
         this.id_producto = id_producto;
     }
 
-    public String getId_pedido() {
-        return id_pedido;
+    public String getId_pedidoPro() {
+        return id_pedidoPro;
     }
 
-    public void setId_pedido(String id_pedido) {
-        this.id_pedido = id_pedido;
+    public void setId_pedidoPro(String id_pedidoPro) {
+        this.id_pedidoPro = id_pedidoPro;
     }
 
-    public String getId_fabricante() {
-        return id_fabricante;
+    public String getId_fabricantePro() {
+        return id_fabricantePro;
     }
 
-    public void setId_fabricante(String id_fabricante) {
-        this.id_fabricante = id_fabricante;
+    public void setId_fabricantePro(String id_fabricantePro) {
+        this.id_fabricantePro = id_fabricantePro;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombrePro() {
+        return nombrePro;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombrePro(String nombrePro) {
+        this.nombrePro = nombrePro;
     }
 
-    public String getValor() {
-        return valor;
+    public String getValorPro() {
+        return valorPro;
     }
 
-    public void setValor(String valor) {
-        this.valor = valor;
+    public void setValorPro(String valorPro) {
+        this.valorPro = valorPro;
     }
 
     @Override
     public String toString() {
-        return nombre;
+        return nombrePro;
     }
 }

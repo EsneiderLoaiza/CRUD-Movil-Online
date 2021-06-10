@@ -34,8 +34,8 @@ public class FabricanteActivity extends AppCompatActivity {
     private ListView listvFabricante;
 
     /*Lista*/
-    private List<Fabricante> listPedido = new ArrayList<Fabricante>();
-    ArrayAdapter<Fabricante> arrayAdapterPedido;
+    private List<Fabricante> listFabricante = new ArrayList<Fabricante>();
+    ArrayAdapter<Fabricante> arrayAdapterFabricante;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -73,13 +73,13 @@ public class FabricanteActivity extends AppCompatActivity {
         databaseReference.child("Fabricante").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listPedido.clear();
+                listFabricante.clear();
                 for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()) {
                     Fabricante fabricante = objSnaptshot.getValue(Fabricante.class);
-                    listPedido.add(fabricante);
+                    listFabricante.add(fabricante);
 
-                    arrayAdapterPedido = new ArrayAdapter<Fabricante>(FabricanteActivity.this, android.R.layout.simple_list_item_1, listPedido);
-                    listvFabricante.setAdapter(arrayAdapterPedido);
+                    arrayAdapterFabricante = new ArrayAdapter<Fabricante>(FabricanteActivity.this, android.R.layout.simple_list_item_1, listFabricante);
+                    listvFabricante.setAdapter(arrayAdapterFabricante);
                 }
             }
 

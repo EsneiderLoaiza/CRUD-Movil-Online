@@ -39,6 +39,11 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(j);
     }
 
+    public void producto(View view) {
+        Intent j = new Intent(MenuActivity.this, ProductoActivity.class);
+        startActivity(j);
+    }
+
     public void cerrarSesion(View view) {
         firebaseAuth.signOut();
         startActivity(new Intent(MenuActivity.this, Login.class));
