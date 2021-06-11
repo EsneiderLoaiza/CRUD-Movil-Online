@@ -55,7 +55,7 @@ public class ProductoActivity extends AppCompatActivity {
 
         listvProducto = findViewById(R.id.listvProducto);
 
-        inicializarFirebase();
+        inicializarFirebase(); //Primero debe estar primero
         listarDatos();
         /*Metodo para seleccionar y traer su contenido a los EditText*/
         listvProducto.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -75,16 +75,17 @@ public class ProductoActivity extends AppCompatActivity {
         databaseReference.child("Producto").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listProducto.clear();
+                listProducto.clear(); //Elimina cache
+                //Se obtiene datos del hijo
                 for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()) {
                     Producto producto = objSnaptshot.getValue(Producto.class);
                     listProducto.add(producto);
 
+                    //Pendiente
                     arrayAdapterProducto = new ArrayAdapter<Producto>(ProductoActivity.this, android.R.layout.simple_list_item_1, listProducto);
                     listvProducto.setAdapter(arrayAdapterProducto);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -123,7 +124,7 @@ public class ProductoActivity extends AppCompatActivity {
             producto.setId_fabricantePro(idFabricante);
             producto.setNombrePro(nombre);
             producto.setValorPro(valor);
-            /*Posible problema con el id cliente, por su tipo*/
+
             /*Crea la tabla Pedido y desglosa información por id*/
             databaseReference.child("Producto").child(producto.getId_producto()).setValue(producto);
 
@@ -141,7 +142,7 @@ public class ProductoActivity extends AppCompatActivity {
         producto.setValorPro(etValorPro.getText().toString().trim());
 
         /*Accedemos a nuestra DatabaseReference*/
-        /*Posible error por id*/
+
         databaseReference.child("Producto").child(producto.getId_producto()).setValue(producto);
         Toast.makeText(this, "Registro actualizado", Toast.LENGTH_LONG).show();
         limpiarCampo();
@@ -149,7 +150,7 @@ public class ProductoActivity extends AppCompatActivity {
 
     public void eliminarPro (View view) {
         Producto producto = new Producto();
-        producto.setId_producto(producto.getId_producto());
+        producto.setId_producto(productoSeleccionado.getId_producto());
 
         databaseReference.child("Producto").child(producto.getId_producto()).removeValue();
         Toast.makeText(this, "Eliminado", Toast.LENGTH_LONG).show();
@@ -180,7 +181,7 @@ public class ProductoActivity extends AppCompatActivity {
 
         etId_producto.setText("");
         etId_pedidoPro.setText("");
-        etId_producto.setText("");
+        etId_fabricantePro.setText("");
         etNombrePro.setText("");
         etValorPro.setText("");
     }

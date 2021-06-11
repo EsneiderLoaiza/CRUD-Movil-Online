@@ -129,6 +129,7 @@ public class FacturaActivity extends AppCompatActivity {
     }
 
     public void actualizarFac (View view) {
+
         Factura factura = new Factura();
         factura.setId_factura(etId_factura.getText().toString().trim());
         factura.setId_productoFac(etId_productoFac.getText().toString().trim());
@@ -140,11 +141,12 @@ public class FacturaActivity extends AppCompatActivity {
         databaseReference.child("Factura").child(factura.getId_factura()).setValue(factura);
         Toast.makeText(this, "Registro actualizado", Toast.LENGTH_LONG).show();
         limpiarCampo();
+
     }
 
     public void eliminarFac (View view) {
         Factura factura = new Factura();
-        factura.setId_factura(factura.getId_factura());
+        factura.setId_factura(facturaSeleccionado.getId_factura());
 
         databaseReference.child("Factura").child(factura.getId_factura()).removeValue();
         Toast.makeText(this, "Eliminado", Toast.LENGTH_LONG).show();

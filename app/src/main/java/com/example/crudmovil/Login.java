@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance(); // new
 
         btnIngresar = findViewById(R.id.btnIngresar);
         etEmail = findViewById(R.id.etEmail);
@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    /*Si se pudo iniiar sesión, iremos a la siguiente ventana*/
+                    /*Si se pudo iniciar sesión, iremos a la siguiente ventana*/
                     if (task.isSuccessful()) {
                         Intent i = new Intent(Login.this, MenuActivity.class);
                         startActivity(i);

@@ -143,7 +143,7 @@ public class FabricanteActivity extends AppCompatActivity {
 
     public void eliminarFr (View view) {
         Fabricante fabricante = new Fabricante();
-        fabricante.setId_fabricante(fabricante.getId_fabricante());
+        fabricante.setId_fabricante(fabricanteSeleccionado.getId_fabricante());
 
         databaseReference.child("Fabricante").child(fabricante.getId_fabricante()).removeValue();
         Toast.makeText(this, "Eliminado", Toast.LENGTH_LONG).show();

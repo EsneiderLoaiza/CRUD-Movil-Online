@@ -27,7 +27,6 @@ public class PedidActivity extends AppCompatActivity {
 
     private EditText etId_pedido;
     private EditText etId_cliente;
-    private EditText etNombreP;
     private EditText etFecha;
     private EditText etDescripcion;
 
@@ -49,7 +48,6 @@ public class PedidActivity extends AppCompatActivity {
 
         etId_pedido = findViewById(R.id.etId_pedido);
         etId_cliente = findViewById(R.id.etId_cliente);
-        etNombreP = findViewById(R.id.etNombreP);
         etFecha = findViewById(R.id.etFecha);
         etDescripcion = findViewById(R.id.etDescripcion);
 
@@ -64,7 +62,6 @@ public class PedidActivity extends AppCompatActivity {
                 pedidoSeleccionado = (Pedido) parent.getItemAtPosition(position);
                 etId_pedido.setText(pedidoSeleccionado.getId_pedido());
                 etId_cliente.setText(pedidoSeleccionado.getId_cliente());
-                etNombreP.setText(pedidoSeleccionado.getNombre());
                 etFecha.setText(pedidoSeleccionado.getFecha());
                 etDescripcion.setText(pedidoSeleccionado.getDescripcion());
             }
@@ -101,7 +98,6 @@ public class PedidActivity extends AppCompatActivity {
 
     private String idPedido;
     private String idCliente;
-    private String nombre;
     private String fecha;
     private String descripcion;
 
@@ -109,18 +105,16 @@ public class PedidActivity extends AppCompatActivity {
 
         idPedido = etId_pedido.getText().toString();
         idCliente = etId_cliente.getText().toString();
-        nombre = etNombreP.getText().toString();
         fecha = etFecha.getText().toString();
         descripcion = etDescripcion.getText().toString();
 
-        if (idPedido.equals("") || idCliente.equals("") || nombre.equals("") || fecha.equals("") || descripcion.equals("")) {
-            validacion(idPedido, idCliente, nombre, fecha, descripcion);
+        if (idPedido.equals("") || idCliente.equals("") || fecha.equals("") || descripcion.equals("")) {
+            validacionP(idPedido, idCliente, fecha, descripcion);
         }else {
             Pedido pedido = new Pedido();
             /*Campos para  Firebase*/
             pedido.setId_pedido(idPedido);
             pedido.setId_cliente(idCliente);
-            pedido.setNombre(nombre);
             pedido.setFecha(fecha);
             pedido.setDescripcion(descripcion);
             /*Posible problema con el id cliente, por su tipo*/
@@ -136,7 +130,6 @@ public class PedidActivity extends AppCompatActivity {
         Pedido pedido = new Pedido();
         pedido.setId_pedido(etId_pedido.getText().toString().trim());
         pedido.setId_cliente(etId_cliente.getText().toString().trim());
-        pedido.setNombre(etNombreP.getText().toString().trim());
         pedido.setFecha(etFecha.getText().toString().trim());
         pedido.setDescripcion(etDescripcion.getText().toString().trim());
 
@@ -149,7 +142,7 @@ public class PedidActivity extends AppCompatActivity {
 
     public void eliminarP (View view) {
         Pedido pedido = new Pedido();
-        pedido.setId_pedido(pedido.getId_pedido());
+        pedido.setId_pedido(pedidoSeleccionado.getId_pedido());
 
         databaseReference.child("Pedido").child(pedido.getId_pedido()).removeValue();
         Toast.makeText(this, "Eliminado", Toast.LENGTH_LONG).show();
@@ -157,16 +150,13 @@ public class PedidActivity extends AppCompatActivity {
     }
 
     /*Validación de campos*/
-    public void validacion(String idPedido, String idCliente, String nombre, String fecha, String descripcion) {
+    public void validacionP(String idPedido, String idCliente, String fecha, String descripcion) {
 
         if (idPedido.equals("")){
             etId_pedido.setError("Campo requerido");
         }
         if (idCliente.equals("")){
             etId_cliente.setError("Campo requerido");
-        }
-        if (nombre.equals("")){
-            etNombreP.setError("Campo requerido");
         }
         if (fecha.equals("")){
             etFecha.setError("Campo requerido");
@@ -180,9 +170,8 @@ public class PedidActivity extends AppCompatActivity {
 
         etId_pedido.setText("");
         etId_cliente.setText("");
-        etNombreP.setText("");
         etFecha.setText("");
-        etFecha.setText("");
+        etDescripcion.setText("");
     }
 
     public void atrasP(View view) {

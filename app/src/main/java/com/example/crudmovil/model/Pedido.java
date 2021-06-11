@@ -4,7 +4,6 @@ public class Pedido {
 
     private String id_pedido;
     private String id_cliente;
-    private String nombre;
     private String fecha;
     private String descripcion;
 
@@ -43,16 +42,9 @@ public class Pedido {
         this.descripcion = descripcion;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     @Override
     public String toString() {
-        return nombre;
+        return fecha;
     }
 }
